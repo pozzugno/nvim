@@ -28,15 +28,9 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Appearance
-require("config.lazy")
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
-vim.cmd[[colorscheme tokyonight]]
 
 -- Lazy Plugins 
+require("config.lazy")
 require("lazy").setup("plugins")
-
--- Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-
