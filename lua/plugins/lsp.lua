@@ -15,6 +15,7 @@ return {
       vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer = 0})
       vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer = 0})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {buffer = 0})
+      vim.keymap.set("n", "<leader>fr", require("telescope.builtin").lsp_references, {buffer = 0})
     end
     require'lspconfig'.clangd.setup{
       capabilities = capabilities,
