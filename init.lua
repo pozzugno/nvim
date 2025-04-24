@@ -31,6 +31,9 @@ vim.opt.splitbelow = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
+-- Keymaps
+require("config.keymaps")
+
 -- Lazy Plugins 
 require("config.lazy")
 require("lazy").setup("plugins")
