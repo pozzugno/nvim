@@ -4,6 +4,12 @@ return {
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
+    -- custom hover
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+      vim.lsp.handlers.hover,
+      { border = "single" }
+    )
+
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     local lsp_keymaps = function()
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer = 0})
@@ -17,6 +23,9 @@ return {
       vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer = 0})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {buffer = 0})
       vim.keymap.set("n", "<leader>fr", require("telescope.builtin").lsp_references, {buffer = 0})
+      vim.keymap.set("n", "<leader>e", function()
+        vim.diagnostic.open_float(nil, {focusable = false, scope = "line", max_width = 80, border = "single"})
+      end, {buffer = 0})
     end
     require'lspconfig'.clangd.setup{
       capabilities = capabilities,
