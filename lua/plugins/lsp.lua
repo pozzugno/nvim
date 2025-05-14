@@ -30,6 +30,8 @@ return {
     require'lspconfig'.clangd.setup{
       capabilities = capabilities,
       on_attach = lsp_keymaps,
+      cmd = { "clangd", "--compile-commands-dir=build" },
+      root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
     }
     require'lspconfig'.gopls.setup{
       capabilities = capabilities,
