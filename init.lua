@@ -37,4 +37,3 @@ require("config.keymaps")
 
 -- Lazy Plugins 
 require("config.lazy")
-require("lazy").setup("plugins")
