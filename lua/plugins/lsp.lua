@@ -30,7 +30,11 @@ return {
     require'lspconfig'.clangd.setup{
       capabilities = capabilities,
       on_attach = lsp_keymaps,
-      cmd = { "clangd", "--compile-commands-dir=build" },
+      -- I don't use --compile-commands-dir option because I prefer to stay with
+      -- the default behaviour of clangd. In my case, clangd will find the file
+      -- in the workspace root folder, because I have many different build
+      -- directories for each CMake preset.
+      cmd = { "clangd" },
       root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
     }
     require'lspconfig'.gopls.setup{
