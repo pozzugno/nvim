@@ -37,3 +37,13 @@ require("config.keymaps")
 
 -- Lazy Plugins 
 require("config.lazy")
+
+-- Uncomment the default colorscheme you want to use
+-- vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme catppuccin-latte")
+-- vim.cmd("colorscheme catppuccin-frappe")
+-- vim.cmd("colorscheme catppuccin-macchiato")
+-- vim.cmd("colorscheme catppuccin-mocha")
+
